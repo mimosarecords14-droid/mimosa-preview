@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mimosa records | 音楽の種を蒔き、才能を咲かせる</title>
+    <meta name="description" content="mimosa recordsは、アーティストのプロデュースからDTM教室、スタジオ運営までを手掛ける総合音楽クリエイティブチームです。">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mimosa: '#FADB5F', // ミモザイエロー
+                        leaf: '#7BAA74',   // リーフグリーン
+                        dark: '#1E293B',   // 深いブルーグレー
+                        light: '#F8FAFC',
+                    },
+                    fontFamily: {
+                        sans: ['"Outfit"', '"Noto Sans JP"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- 外部CSSの読み込み -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="antialiased selection:bg-mimosa selection:text-dark">
+
+    <!-- 背景の動的グラデーション -->
+    <div class="blob-container">
+        <div class="blob blob-yellow"></div>
+        <div class="blob blob-green"></div>
+        <div class="blob blob-light"></div>
+    </div>
+
+    <!-- Header (Glassmorphism Nav) -->
+    <header class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50 transition-all duration-300">
+        <div class="glass-card px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="./images/mimosa_records_logo.JPG" alt="mimosa records ロゴ" class="h-9 w-9 aspect-square rounded-full object-cover group-hover:scale-105 transition-transform border border-leaf/20 shadow-sm">
+                <span class="font-outfit font-bold text-xl tracking-tight">mimosa <span class="font-light">records</span></span>
+            </a>
+            <nav class="hidden md:flex gap-8 font-outfit text-sm font-semibold tracking-wide">
+                <a href="#" class="hover:text-leaf transition-colors">LABEL</a>
+                <a href="#" class="hover:text-leaf transition-colors">STUDIO</a>
+                <a href="#" class="hover:text-leaf transition-colors">ABOUT</a>
+                <a href="#" class="hover:text-leaf transition-colors">CONTACT</a>
+            </nav>
+            <button class="md:hidden text-2xl"><i class="ph ph-list"></i></button>
+        </div>
+    </header>
+
+<section id="contact" class="relative z-10 flex justify-center px-6 py-20">
+    <div class="glass-card bg-white/90 w-full max-w-2xl p-8 md:p-12 shadow-2xl rounded-3xl">
+        
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-outfit font-bold text-dark tracking-tight">Contact</h2>
+            <div class="h-1 w-12 bg-mimosa mx-auto mt-2 rounded-full"></div>
+            <p class="text-sm text-slate-500 mt-4 font-sans">
+                お問い合わせは以下のフォームより受け付けております。
+            </p>
+        </div>
+
+        <form action="https://formspree.io/f/xbdpekjr" method="POST" class="space-y-6">
+            <div class="form-item">
+                <label for="email" class="block text-sm font-bold text-dark mb-2">
+                    メールアドレス <span class="text-[10px] bg-red-400 text-white px-2 py-0.5 rounded ml-1 align-middle">必須</span>
+                </label>
+                <input type="email" id="email" name="email" required 
+                    placeholder="example@mail.com"
+                    class="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-leaf focus:border-transparent outline-none transition-all">
+            </div>
+
+            <div class="form-item">
+                <label for="message" class="block text-sm font-bold text-dark mb-2">
+                    お問い合わせ内容 <span class="text-[10px] bg-red-400 text-white px-2 py-0.5 rounded ml-1 align-middle">必須</span>
+                </label>
+                <textarea id="message" name="message" required 
+                    placeholder="ご質問やご依頼内容をご記入ください"
+                    class="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-leaf focus:border-transparent outline-none transition-all h-40 resize-none"></textarea>
+            </div>
+
+            <div class="text-center pt-4">
+                <button type="submit" 
+                    class="bg-dark text-white font-bold py-4 px-12 rounded-full hover:bg-leaf hover:scale-105 transition-all duration-300 shadow-lg active:scale-95">
+                    送信する
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
