@@ -47,21 +47,32 @@
     </div>
 
     <!-- Header (Glassmorphism Nav) -->
-    <header class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50 transition-all duration-300">
-        <div class="glass-card px-6 py-4 flex justify-between items-center">
-            <a href="#" class="flex items-center gap-2 group">
-                <img src="./images/mimosa_records_logo.JPG" alt="mimosa records ロゴ" class="h-9 w-9 aspect-square rounded-full object-cover group-hover:scale-105 transition-transform border border-leaf/20 shadow-sm">
-                <span class="font-outfit font-bold text-xl tracking-tight">mimosa <span class="font-light">records</span></span>
-            </a>
-            <nav class="hidden md:flex gap-8 font-outfit text-sm font-semibold tracking-wide">
-                <a href="#" class="hover:text-leaf transition-colors">LABEL</a>
-                <a href="#" class="hover:text-leaf transition-colors">STUDIO</a>
-                <a href="#" class="hover:text-leaf transition-colors">ABOUT</a>
-                <a href="#" class="hover:text-leaf transition-colors">CONTACT</a>
-            </nav>
-            <button class="md:hidden text-2xl"><i class="ph ph-list"></i></button>
+<header class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50 transition-all duration-300">
+    <div class="glass-card px-6 py-4 flex justify-between items-center relative">
+        <a href="#" class="flex items-center gap-2 group">
+            <img src="./images/mimosa_records_logo.JPG" alt="mimosa records ロゴ" class="h-9 w-9 aspect-square rounded-full object-cover group-hover:scale-105 transition-transform border border-leaf/20 shadow-sm">
+            <span class="font-outfit font-bold text-xl tracking-tight">mimosa <span class="font-light">records</span></span>
+        </a>
+
+        <nav class="hidden md:flex gap-8 font-outfit text-sm font-semibold tracking-wide">
+            <a href="#" class="hover:text-leaf transition-colors">ARTISTS</a>
+            <a href="/members.html" class="hover:text-leaf transition-colors">MEMBERS</a>
+            <a href="#" class="hover:text-leaf transition-colors">NEWS</a>
+            <a href="/contact.html" class="hover:text-leaf transition-colors">CONTACT</a>
+        </nav>
+
+        <button id="menu-btn" class="md:hidden text-2xl focus:outline-none">
+            <i class="ph ph-list" id="menu-icon"></i>
+        </button>
+
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full mt-2 glass-card flex-col p-6 gap-4 md:hidden">
+            <a href="#" class="hover:text-leaf transition-colors border-b border-leaf/10 pb-2">ARTISTS</a>
+            <a href="/members.html" class="hover:text-leaf transition-colors border-b border-leaf/10 pb-2">MEMBERS</a>
+            <a href="#" class="hover:text-leaf transition-colors border-b border-leaf/10 pb-2">NEWS</a>
+            <a href="/contact.html" class="hover:text-leaf transition-colors">CONTACT</a>
         </div>
-    </header>
+    </div>
+</header>
 
     <!-- Main Content: Bento Grid -->
     <main class="pt-24 pb-12 min-h-screen flex flex-col justify-center">
