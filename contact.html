@@ -140,6 +140,23 @@
     </nav>
 </header>
 
+<div id="mobile-nav" class="fixed inset-0 bg-mimosa z-[105] md:hidden flex flex-col items-center justify-center p-8">
+    <nav class="flex flex-col items-center gap-8 font-outfit font-black text-5xl tracking-tighter">
+        <a href="index.html#artists" class="hover:italic transition-all">ARTISTS</a>
+        <a href="members.html" class="hover:italic transition-all">MEMBERS</a>
+        <a href="index.html#news" class="hover:italic transition-all">NEWS</a>
+        
+        <a href="contact.html" class="text-white italic transition-all pointer-events-none">CONTACT</a>
+    </nav>
+    <div class="absolute bottom-12 flex flex-col items-center gap-4">
+        <div class="flex gap-8 text-2xl">
+            <a href="#" class="hover:text-white transition-colors"><i class="ph ph-instagram-logo"></i></a>
+            <a href="#" class="hover:text-white transition-colors"><i class="ph ph-spotify-logo"></i></a>
+        </div>
+        <p class="text-[10px] font-bold tracking-widest opacity-50 uppercase">© 2026 Mimosa Records Osaka</p>
+    </div>
+</div>
+
 <section id="contact" class="relative z-10 flex justify-center px-6 py-20">
     <div class="glass-card bg-white/90 w-full max-w-2xl p-8 md:p-12 shadow-2xl rounded-3xl">
         
@@ -213,7 +230,7 @@
         </div>
     </footer>
 
-      <script>
+    <script>
         document.addEventListener('DOMContentLoaded', () => {
             // 1. モバイルメニューのトグル
             const menuBtn = document.getElementById('menu-btn');
