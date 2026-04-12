@@ -143,6 +143,9 @@
     </header>
 
     <div id="mobile-nav" class="fixed inset-0 bg-mimosa z-[105] md:hidden flex flex-col items-center justify-center p-8">
+        <button id="close-btn" class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center text-dark hover:rotate-90 transition-transform duration-300" aria-label="Close Menu">
+            <i class="ph ph-x text-4xl"></i>
+        </button>
         <nav class="flex flex-col items-center gap-8 font-outfit font-black text-5xl tracking-tighter">
             <a href="#" class="hover:italic transition-all">ARTISTS</a>
             <a href="members.html" class="text-white italic transition-all">MEMBERS</a>
@@ -245,23 +248,33 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // 1. モバイルメニューのトグル
-            const menuBtn = document.getElementById('menu-btn');
-            const mobileNav = document.getElementById('mobile-nav');
-            const btnSpans = menuBtn.querySelectorAll('span');
+            
+            // 1. モバイルメニューの完全制御（プロ仕様）
+            const menuBtn = document.getElementById('menu-btn');    // 開くボタン（ハンバーガー）
+            const closeBtn = document.getElementById('close-btn');  // 閉じるボタン（バツ）
+            const mobileNav = document.getElementById('mobile-nav');// メニュー本体
+            const mobileLinks = mobileNav.querySelectorAll('nav a'); // メニュー内のリンク一覧
 
+            // メニューを開く処理
             menuBtn.addEventListener('click', () => {
-                const isActive = mobileNav.classList.toggle('is-active');
-                document.body.classList.toggle('overflow-hidden'); // スクロール固定
+                mobileNav.classList.add('is-active');
+                document.body.classList.add('overflow-hidden'); // 背面のスクロールを禁止
+            });
 
-                // ハンバーガーアニメーション (Xへの変形)
-                if (isActive) {
-                    btnSpans[0].style.transform = 'translateY(4px) rotate(45deg)';
-                    btnSpans[1].style.transform = 'translateY(-4px) rotate(-45deg)';
-                } else {
-                    btnSpans[0].style.transform = 'none';
-                    btnSpans[1].style.transform = 'none';
-                }
+            // メニューを閉じる処理（関数化して使い回す）
+            const closeMenu = () => {
+                mobileNav.classList.remove('is-active');
+                document.body.classList.remove('overflow-hidden'); // スクロール禁止を解除
+            };
+
+            // バツボタンを押した時に閉じる
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeMenu);
+            }
+
+            // 【UX向上】メニュー内のリンクをタップした時も自動で閉じる
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', closeMenu);
             });
 
             // 2. スクロール監視（フェードイン・アニメーション）
